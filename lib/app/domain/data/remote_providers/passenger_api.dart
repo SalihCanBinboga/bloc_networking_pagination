@@ -17,6 +17,9 @@ class PassengerApi implements IPassengerApi {
     int limit = 10,
   }) async {
     final rawResponse = await http.get(Uri.parse('${AppConstants.kBaseEndPoint}/?page=$page&size=$limit'));
+    if (rawResponse.statusCode != 200) {
+      throw Exception('Request Failed: ${rawResponse.statusCode}');
+    }
     return rawResponse.body;
   }
 }
