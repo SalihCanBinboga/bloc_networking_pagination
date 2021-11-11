@@ -1,14 +1,14 @@
-import '../../../data/data_providers/remote/i_passenger_api.dart';
+import '../../../data/data_providers/remote/passenger_api.dart';
 
 import '../../constants/app_constants.dart';
 import 'package:http/http.dart' as http;
 
-class PassengerApi implements IPassengerApi {
-  static final PassengerApi _authenticationAPI = PassengerApi._internal();
+class PassengerApiImpl implements PassengerApi {
+  static final PassengerApiImpl _authenticationAPI = PassengerApiImpl._internal();
 
-  factory PassengerApi() => _authenticationAPI;
+  factory PassengerApiImpl() => _authenticationAPI;
 
-  PassengerApi._internal();
+  PassengerApiImpl._internal();
 
   /// Yolcu listesini getiren servis.
   @override
