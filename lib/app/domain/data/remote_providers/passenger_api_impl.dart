@@ -14,9 +14,9 @@ class PassengerApiImpl implements PassengerApi {
   @override
   Future<String> getPassengersWithPagination({
     int page = 0,
-    int limit = 10,
+    int limit = 15,
   }) async {
-    final rawResponse = await http.get(Uri.parse('${AppConstants.kBaseEndPoint}/?page=$page&size=$limit'));
+    final rawResponse = await http.get(Uri.parse('${AppConstants.kBaseEndPoint}/passenger?page=$page&size=$limit'));
     if (rawResponse.statusCode != 200) {
       throw Exception('Request Failed: ${rawResponse.statusCode}');
     }
