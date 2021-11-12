@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:networking_pagination_bloc/app/domain/models/passenger.dart';
+import '../../../domain/models/passenger.dart';
 import '../../../data/repositories/passenger_repository.dart';
 import 'logic/pagination_list_bloc.dart';
 
