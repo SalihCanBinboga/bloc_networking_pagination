@@ -12,7 +12,7 @@ class PassengerRepositoryImpl implements PassengerRepository {
   @override
   Future<Iterable<Passenger>> getPassengers({
     int page = 0,
-    int limit = 10,
+    int limit = 15,
   }) async {
     final response = await _passengerApi.getPassengersWithPagination(
       page: page,
