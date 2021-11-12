@@ -32,9 +32,9 @@ class Passenger {
 
   factory Passenger.fromMap(Map<String, dynamic> map) {
     return Passenger(
-      id: map['_id'],
-      name: map['name'],
-      trips: map['trips'],
+      id: map['_id'] ?? '',
+      name: map['name'] ?? '',
+      trips: map['trips'] ?? 0,
     );
   }
 
