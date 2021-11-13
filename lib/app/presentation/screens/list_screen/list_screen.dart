@@ -16,7 +16,7 @@ class ListScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(title: const Text('List Pagination DevFest')),
       body: BlocProvider(
-        create: (_) => PaginationListBloc(
+        create: (context) => PaginationListBloc(
           passengerRepository: context.read<PassengerRepository>(),
         )..add(PassengerFetched()),
         child: const PassengerListBody(),
