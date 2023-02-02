@@ -1,16 +1,78 @@
-# networking_pagination_bloc
+### Introduction
+This project is an example that showcases the use of pagination in a list with BLOC architecture for communication and state management. It serves as an illustration of how to implement pagination in a Flutter project using the BLOC pattern.
 
-A new Flutter project.
+### Requirements
+Latest version of Flutter
 
-## Getting Started
+### Project structure
+The project is built using the MVVM architecture. The file structure is as follows:
 
-This project is a starting point for a Flutter application.
+```dart
+lib
+  app
+    data
+      data_providers
+        remote
+        local
+      repositories
+    domain
+      constants
+      data
+        remote_providers
+        repositories
+      models
+    presentation
+      screens
+        list_screen
+          components
+          logic
+          list_screen.dart
+  app.dart
+  main.dart
+```
 
-A few resources to get you started if this is your first Flutter project:
+### How to runHow to run
+To run this project, simply follow the steps to run a normal Flutter application:
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+1. Clone the repository: git clone https://github.com/[your-username]/[repo-name].git
+2. Change into the project directory: cd [repo-name]
+3. Install the dependencies: flutter pub get
+4. Run the app on an emulator or connected device: flutter run
+5. State management techniques
+6. The BLOC package is used for state management in this project.
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+### Application Snippet
+```dart
+class PaginationApp extends StatelessWidget {
+  const PaginationApp({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return MultiRepositoryProvider(
+      providers: [
+        RepositoryProvider<PassengerRepository>(
+          create: (context) => PassengerRepositoryImpl(
+            passengerApi: PassengerApiImpl(),
+          ),
+        ),
+      ],
+      child: MaterialApp(
+        title: 'Flutter Bloc Pagination',
+        theme: ThemeData(
+          primarySwatch: Colors.blue,
+        ),
+        home: const ListScreen(),
+      ),
+    );
+  }
+}
+```
+
+### Contributions
+If you'd like to contribute to this project, please follow these guidelines:
+
+1. Fork the repository.
+2. Create a branch for your changes.
+3. Submit a pull request.
+
+Your contribution is greatly appreciated!
